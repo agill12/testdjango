@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'todo',
     'home',
     'comments',
+    
 ]
 
 MIDDLEWARE = [

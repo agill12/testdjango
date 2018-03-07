@@ -1,4 +1,12 @@
 {% extends 'home/base.html' %}
+{% load static %}
+
+{% block styles %}
+{{ block.super }}
+<link rel="stylesheet" type="text/css" href="{% static 'todo/style.css' %}" />
+{% endblock styles %}
+
+
 
 {% block content %}
     <h1>Things to do...</h1>

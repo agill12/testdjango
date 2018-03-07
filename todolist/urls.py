@@ -23,6 +23,6 @@ import home.views as home_views
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', home_views.get_index, name="home"),
-    url(r'^chat/', include(comments_urls)),
+    url(r'^comments/', include(comments_urls)),
     url(r'^todo/', include(todo_urls)),
 ]
