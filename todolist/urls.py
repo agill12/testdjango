@@ -17,10 +17,14 @@ from django.conf.urls import url
 from django.contrib import admin
 from todo.views import get_todo_page
 from todo.views import delete_todo_item
+from todo.views import toggle_todo_item
+from todo.views import edit_todo_item
 
 urlpatterns = [
     url(r'^$',get_todo_page),
     url(r'^admin/', admin.site.urls),
     url(r'^delete/(\d+)$',delete_todo_item),
+    url(r'^toggle/(\d+)$',toggle_todo_item),
+    url(r'^edit/(\d+)$',edit_todo_item),
     
 ]
