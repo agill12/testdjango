@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+    <a href="{% url 'home' %}">Home</a> |
+    <a href="{% url 'todo_index' %}">Todo</a> |
+    <a href="{% url 'comments_index' %}">Comments</a> |
+    <a href="{% url 'home' %}">About</a> 
+
+    {% block content %}
+    {% endblock %}
+
+    {% block footer %}
+    <hr>
+    <p>This is the footer</p>
+    {% endblock footer %}
+
+</body>
+</html>

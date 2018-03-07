@@ -1,5 +1,4 @@
-"""todolist URL Configuration
-
+"""trydjango URL Configuration
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/1.11/topics/http/urls/
 Examples:
@@ -13,18 +12,17 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
-from django.conf.urls import url
+from django.conf.urls import url, include
 from django.contrib import admin
-from todo.views import get_todo_page
-from todo.views import delete_todo_item
-from todo.views import toggle_todo_item
-from todo.views import edit_todo_item
+
+from todo import urls as todo_urls
+from comments import urls as comments_urls
+
+import home.views as home_views
 
 urlpatterns = [
-    url(r'^$',get_todo_page),
     url(r'^admin/', admin.site.urls),
-    url(r'^delete/(\d+)$',delete_todo_item),
-    url(r'^toggle/(\d+)$',toggle_todo_item),
-    url(r'^edit/(\d+)$',edit_todo_item),
-    
+    url(r'^$', home_views.get_index, name="home"),
+    url(r'^chat/', include(comments_urls)),
+    url(r'^todo/', include(todo_urls)),
 ]
